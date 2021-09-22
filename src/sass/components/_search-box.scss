@@ -1,0 +1,39 @@
+.search {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  &__input {
+    flex-grow: 1;
+    height: 4rem;
+    border-radius: 4px;
+    overflow: hidden;
+    border: none;
+    padding: 0 1rem;
+    padding-right: 6rem;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 2px 2px var(--color-orange);
+    }
+  }
+  &__btn {
+    @include flexCenter;
+    position: absolute;
+    border: none;
+    width: 5.5rem;
+    background-color: var(--color-yellow);
+    height: 4rem;
+    top: 0;
+    right: 0;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-yellow-dark);
+    }
+
+    &:focus {
+      box-shadow: 0 0 3px 2px var(--color-orange);
+    }
+  }
+}

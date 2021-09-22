@@ -1,0 +1,18 @@
+@import './abstracts/mixins';
+@import './abstracts/variables';
+
+@import './base/base';
+@import './base/typography';
+@import './base/util';
+@import './base/animations';
+
+@import './components/header';
+@import './components/icon';
+@import './components/search-box';
+@import './components/offer';
+@import './components/btn';
+@import './components/product';
+@import './components/carousel';
+@import './components/footer';
+
+@import './pages/home';

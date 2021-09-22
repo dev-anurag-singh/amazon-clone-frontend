@@ -1,0 +1,23 @@
+// .btn {
+//   //   &,
+//   //   &:link,
+//   //   &:active,
+//   //   &:visited {
+//   //     font-size: 1.6rem;
+//   //   }
+// }
+
+.btn-text {
+  &,
+  &:link,
+  &:visited {
+    font-size: 1.4rem;
+    color: var(--color-blue);
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    color: var(--color-orange);
+    text-decoration: underline;
+  }
+}

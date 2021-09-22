@@ -1,0 +1,23 @@
+.section-hero {
+  background-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 40%,
+      rgba($color-white, 0.05) 40%,
+      rgba($color-white, 0.1) 50%,
+      rgba($color-white, 0.2) 60%,
+      rgba($color-white, 0.4) 70%,
+      rgba($color-white, 0.8) 80%,
+      rgba($color-white, 9) 100%
+    ),
+    url('../../img/hero__image.jpg');
+
+  background-size: cover;
+  padding: 25rem 4rem 4rem;
+  background-position: top;
+}
+
+.section-products {
+  padding: 4rem 4rem 8rem;
+  background-color: var(--color-white-grey);
+}

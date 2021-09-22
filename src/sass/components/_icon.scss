@@ -1,0 +1,13 @@
+.icon {
+  &__location {
+    color: var(--color-white);
+    margin-top: 0.6rem;
+    margin-right: 0.5rem;
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+  &__cart {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}

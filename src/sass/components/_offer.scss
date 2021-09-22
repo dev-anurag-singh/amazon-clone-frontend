@@ -1,0 +1,42 @@
+.offer {
+  &__list {
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    justify-content: space-between;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__card {
+    flex: 1 0 28rem;
+    background-color: var(--color-white);
+    padding: 2rem;
+    color: inherit;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    & span {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 28rem;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 1rem;
+  }
+}

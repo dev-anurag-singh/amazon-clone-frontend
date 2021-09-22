@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #131921;
+  --color-black: #0f1111;
+  --color-black-light: #393e46;
+  --color-white: #fff;
+  --color-white-grey: #f1f1f1;
+  --color-grey-light-1: #b2b1b9;
+  --color-grey: #777;
+  --color-yellow: #febd69;
+  --color-yellow-dark: #f3a847;
+  --color-orange: #df711b;
+  --color-blue: #0d788b;
+}
+
+html {
+  font-size: 62.5%; // 1rem becomes 10px;
+
+  @include responsiveMax(58em) {
+    font-size: 56.25%; // 1rem becomes 9px;
+  }
+  @include responsiveMax(37.5em) {
+    font-size: 50%; // 1rem becomes 8px
+  }
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
