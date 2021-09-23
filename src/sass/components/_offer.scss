@@ -16,8 +16,9 @@
     background-color: var(--color-white);
     padding: 2rem;
     color: inherit;
+    margin-left: 2rem;
 
-    &:not(:last-child) {
+    &:last-child {
       margin-right: 2rem;
     }
   }

@@ -5,7 +5,7 @@ import ProductFeedCard from './ProductFeedCard';
 class ProductFeed extends Component {
   renderProductFeedCards = () => {
     return this.props.productsData.map(product => {
-      return <ProductFeedCard key={product._id} data={product} />;
+      return <ProductFeedCard key={product._id} product={product} />;
     });
   };
 

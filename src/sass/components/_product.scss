@@ -1,17 +1,15 @@
 .product-feed {
-  background-color: var(--color-white);
-  padding: 2rem;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   overflow: hidden;
   min-height: 24rem;
 
   &:not(:last-child) {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
   }
 
   &__heading {
     font-size: 2rem;
     margin-bottom: 2rem;
+    margin-left: 2rem;
     font-weight: 500;
     color: var(--color-black-light);
   }
@@ -19,23 +17,45 @@
   &__card {
     width: 26rem;
     display: inline-block;
-    height: 24rem;
-
-    @include responsiveMax(30em) {
-      width: 100%;
-      height: 40rem;
-      padding: 2rem 0;
-    }
-
-    &:not(:last-child) {
-      margin-right: 2rem;
-    }
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    margin-left: 2rem;
+    background-color: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-radius: 3px;
+    color: var(--color-primary);
   }
 
   &__image {
-    margin: auto;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: 20rem;
     object-fit: contain;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    width: 100%;
+    white-space: pre-wrap;
+    margin-bottom: 1rem;
+  }
+
+  &__detail {
+    color: var(--color-yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & span:last-child {
+      margin-left: 1rem;
+    }
+    & span:first-child {
+      margin-right: 0.3rem;
+    }
+
+    & .icon__star {
+      transform: translateY(-2px);
+    }
   }
 }
