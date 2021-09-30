@@ -1,8 +1,8 @@
-const Dropdown = ({ label, options, name }) => {
+const Dropdown = ({ label, options, name, onChange }) => {
   const renderDropdownOptions = () => {
     return options.map((el, i) => {
       return (
-        <option key={i} className='dropdown__option' value='1'>
+        <option key={i} className='dropdown__option' value={el}>
           {el}
         </option>
       );
@@ -15,6 +15,7 @@ const Dropdown = ({ label, options, name }) => {
         {label}
       </label>
       <select
+        onChange={e => onChange(e.target.value * 1)}
         className='dropdown__select'
         name='dropdown selector'
         id='selector'

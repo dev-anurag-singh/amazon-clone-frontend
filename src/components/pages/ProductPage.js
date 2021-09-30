@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchProduct, clearProductState } from '../../actions/products';
 
 import Dropdown from '../Dropdown';
-import { AddToCart } from '../Cart';
+import AddToCart from '../AddToCart';
 import ShopFeature from '../ShopFeature';
 import Ratings from '../util/Ratings';
 import ImageViewer from '../ImageViewer';
@@ -11,6 +11,8 @@ import ErrorBox from '../ErrorBox';
 const { Component } = require('react');
 
 class ProductPage extends Component {
+  state = { quantity: 1 };
+
   componentDidMount() {
     // FETCHING PRODUCT
     this.props.fetchProduct(this.props.match.params.id);
@@ -18,6 +20,10 @@ class ProductPage extends Component {
     // SCROLLING TO TOP
     window.scroll(0, 0);
   }
+
+  onQuantityChange = q => {
+    this.setState({ quantity: q });
+  };
 
   componentWillUnmount() {
     // THIS WILL CLEAR PRODUCT STATE
@@ -32,10 +38,17 @@ class ProductPage extends Component {
           <span className='amount'>{`$${this.props.product.price}`}</span>
         </div>
         <div className='u-margin-bottom-sm'>
-          <Dropdown label='Quantity:' options={[1, 2, 3, 4, 5]} />
+          <Dropdown
+            onChange={this.onQuantityChange}
+            label='Quantity:'
+            options={[1, 2, 3, 4, 5]}
+          />
         </div>
         <div className='u-margin-bottom-sm'>
-          <AddToCart />
+          <AddToCart
+            product={this.props.product}
+            quantity={this.state.quantity}
+          />
         </div>
         <div className='shop-feature-box'>
           <ShopFeature />
