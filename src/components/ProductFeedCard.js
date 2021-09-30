@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 
 const ProductFeedCard = ({ product }) => {
-  console.log(product);
   return (
-    <Link to={`/products/${product.slug}`} className='product-feed__card'>
+    <Link
+      to={`/products/${product.slug}/${product._id}`}
+      className='product-feed__card'
+    >
       <img
         src={product.coverImage}
         alt='product feed card'

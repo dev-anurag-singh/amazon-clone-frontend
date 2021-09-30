@@ -6,13 +6,20 @@
 @import './base/util';
 @import './base/animations';
 
-@import './components/header';
 @import './components/icon';
 @import './components/search-box';
 @import './components/offer';
 @import './components/btn';
-@import './components/product';
-@import './components/carousel';
-@import './components/footer';
+@import './components/product-feed';
+@import './components/dropdown';
+@import './components/shop-feature';
+@import './components/table';
+@import './components/image-viewer';
+@import './components/loader';
+
+@import './layout/carousel';
+@import './layout/footer';
+@import './layout/header';
 
 @import './pages/home';
+@import './pages/product';

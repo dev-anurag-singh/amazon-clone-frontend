@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar';
+import SearchBar from '../SearchBar';
 
 const Header = () => {
   return (
     <header className='header'>
       <Link to='/' className='header__logo-box'>
         <img
-          src='./images/Amazon_logo.svg'
+          src='/images/Amazon_logo.svg'
           alt='amazon logo'
           className='header__logo'
         />

@@ -10,10 +10,11 @@
     border: none;
     padding: 0 1rem;
     padding-right: 6rem;
+    transition: box-shadow 0.2s;
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 2px 2px var(--color-orange);
+      box-shadow: 0 0 2px 2.5px var(--color-orange);
     }
   }
   &__btn {

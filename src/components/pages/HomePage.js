@@ -1,12 +1,13 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import OfferList from '../offer/OfferList';
-import ProductFeed from '../product/ProductFeed';
+import OfferList from '../OfferList';
+import ProductFeed from '../ProductFeed';
+// IMPORTING PRODUCTS ACTION CREATOR
 import {
   fetchTopRatedProducts,
   fetchLatestProducts,
   fetchValueForMoneyProducts,
-} from '../../actions';
+} from '../../actions/products';
 
 class HomePage extends Component {
   componentDidMount() {

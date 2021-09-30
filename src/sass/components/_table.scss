@@ -1,0 +1,12 @@
+.table {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  &-row {
+    & td {
+      width: 14rem;
+      @include responsiveMax(25em) {
+        width: 11rem;
+      }
+    }
+  }
+}

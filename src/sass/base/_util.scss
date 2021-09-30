@@ -2,6 +2,67 @@
   max-width: 150rem;
   margin: auto;
 }
+
+// MARGINS
+.mr-auto {
+  margin: auto;
+}
+.margin-top-big {
+  margin-top: 8rem;
+}
+.u-margin-bottom-xsm {
+  margin-bottom: 0.5rem;
+}
+.u-margin-bottom-sm {
+  margin-bottom: 1.5rem;
+}
+.u-margin-bottom-md {
+  margin-bottom: 3rem;
+}
+.fw-600 {
+  font-weight: 600;
+}
+
+// FONT SIZES
+.fs-sm {
+  font-size: 1.6rem;
+}
+.fs-md {
+  font-size: 1.8rem;
+}
+
+// COLOR
+.cl-orange {
+  color: var(--color-orange);
+}
+
+// WIDTH
+.wd-max {
+  width: max-content;
+}
+
+.page-content {
+  min-height: calc(100vh - 14rem);
+  position: relative;
+
+  @include responsiveMax(56.25em) {
+    min-height: calc(100vh - 20rem);
+  }
+}
+
+.ds-none-68em {
+  @include responsiveMax(68em) {
+    display: none !important;
+  }
+}
+
+.ds-visible-68em {
+  display: none !important;
+  @include responsiveMax(68em) {
+    display: block !important;
+  }
+}
+
 .div-skeleton-load {
   height: 20rem;
   width: 100%;
@@ -9,7 +70,4 @@
 }
 .skeleton-img {
   animation: skeleton-loading 1s linear infinite alternate;
-}
-.margin-top-big {
-  margin-top: 8rem;
 }

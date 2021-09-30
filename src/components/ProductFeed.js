@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import FeedCarousel from '../FeedCarousel';
+import FeedCarousel from './layout/FeedCarousel';
 import ProductFeedCard from './ProductFeedCard';
 
 class ProductFeed extends Component {
