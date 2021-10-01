@@ -1,4 +1,5 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ErrorBox from './components/ErrorBox';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
 
@@ -11,8 +12,11 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Header />
-        <Route path='/' exact component={HomePage} />
-        <Route path='/products/:slug/:id' component={ProductPage} />
+        <Switch>
+          <Route path='/' exact component={HomePage} />
+          <Route path='/products/:slug/:id' component={ProductPage} />
+          <Route component={ErrorBox} />
+        </Switch>
         <Footer />
       </BrowserRouter>
     </div>

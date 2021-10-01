@@ -65,11 +65,7 @@ class ProductPage extends Component {
         </div>
       );
     } else if (this.props.error) {
-      return (
-        <div className='page-content'>
-          <ErrorBox />
-        </div>
-      );
+      return <ErrorBox />;
     } else {
       return (
         <div className='page-content container'>
