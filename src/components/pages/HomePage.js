@@ -11,9 +11,15 @@ import {
 
 class HomePage extends Component {
   componentDidMount() {
-    this.props.fetchTopRatedProducts();
-    this.props.fetchLatestProducts();
-    this.props.fetchValueForMoneyProducts();
+    if (!this.props.topRatedProducts.length) {
+      this.props.fetchTopRatedProducts();
+    }
+    if (!this.props.latestProducts.length) {
+      this.props.fetchLatestProducts();
+    }
+    if (!this.props.valueForMoneyProducts.length) {
+      this.props.fetchValueForMoneyProducts();
+    }
   }
 
   renderProductsFeed(data, title) {
