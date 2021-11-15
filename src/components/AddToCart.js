@@ -9,6 +9,8 @@ class AddToCart extends Component {
     event.target.style.border = '2px solid var(--color-yellow-dark-2)';
 
     setTimeout(() => {
+      // CALLING ACTION CREATOR TO ADD PRODUCT TO CART
+
       this.props.addProductToCart(this.props.product, this.props.quantity);
       event.target.innerHTML = 'Add to Cart';
       event.target.style.backgroundColor = 'var(--color-yellow-dark-2)';

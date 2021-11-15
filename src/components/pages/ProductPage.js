@@ -42,6 +42,7 @@ class ProductPage extends Component {
             onChange={this.onQuantityChange}
             label='Quantity:'
             options={[1, 2, 3, 4, 5]}
+            value={this.state.quantity}
           />
         </div>
         <div className='u-margin-bottom-sm'>

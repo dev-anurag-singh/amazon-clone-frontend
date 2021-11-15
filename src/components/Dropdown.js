@@ -1,4 +1,4 @@
-const Dropdown = ({ label, options, name, onChange }) => {
+const Dropdown = ({ label, options, name, onChange, value }) => {
   const renderDropdownOptions = () => {
     return options.map((el, i) => {
       return (
@@ -19,6 +19,7 @@ const Dropdown = ({ label, options, name, onChange }) => {
         className='dropdown__select'
         name='dropdown selector'
         id='selector'
+        value={value}
       >
         {renderDropdownOptions()}
       </select>

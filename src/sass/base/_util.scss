@@ -7,9 +7,7 @@
 .mr-auto {
   margin: auto;
 }
-.margin-top-big {
-  margin-top: 8rem;
-}
+
 .u-margin-bottom-xsm {
   margin-bottom: 0.5rem;
 }
@@ -18,6 +16,9 @@
 }
 .u-margin-bottom-md {
   margin-bottom: 3rem;
+}
+.margin-top-big {
+  margin-top: 8rem;
 }
 .fw-600 {
   font-weight: 600;
@@ -34,6 +35,15 @@
 // COLOR
 .cl-orange {
   color: var(--color-orange);
+}
+
+.bg-cl-white-grey {
+  background-color: var(--color-white-grey);
+}
+
+//BORDER
+.br-bottom-1px {
+  border-bottom: 0.8px solid var(--color-grey-light-1);
 }
 
 // WIDTH
