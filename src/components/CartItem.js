@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import Dropdown from './Dropdown';
 import { updateProductInCart } from '../actions/cart';
+import { Link } from 'react-router-dom';
 
 class CartItem extends Component {
   state = { quantity: this.props.product.quantity };
@@ -16,11 +17,13 @@ class CartItem extends Component {
     return (
       <li className='cart__item'>
         <div className='cart__item-image'>
-          <img src={product.coverImage} alt={product.brand} />
+          <Link to={`/products/${product.slug}/${product._id}`}>
+            <img src={product.coverImage} alt={product.brand} />
+          </Link>
         </div>
         <div className='cart__item-detail'>
-          <p>{product.name}</p>
-
+          <h4>{product.name}</h4>
+          <p>{product.description.slice(0, 180)}</p>
           <span>${product.price}</span>
           <div className='u-margin-bottom-sm'>
             <Dropdown
