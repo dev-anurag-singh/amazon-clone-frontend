@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Dropdown from './Dropdown';
 import { updateProductInCart } from '../actions/cart';
 import { Link } from 'react-router-dom';
+import { RemoveFromCart } from './CartButton';
 
 class CartItem extends Component {
   state = { quantity: this.props.product.quantity };
@@ -25,13 +26,14 @@ class CartItem extends Component {
           <h4>{product.name}</h4>
           <p>{product.description.slice(0, 180)}</p>
           <span>${product.price}</span>
-          <div className='u-margin-bottom-sm'>
+          <div className='u-margin-bottom-sm flex-al-center'>
             <Dropdown
               onChange={this.onQuantityChange}
               label='Quantity:'
               options={[1, 2, 3, 4, 5]}
               value={this.state.quantity}
             />
+            <RemoveFromCart productIndex={this.props.index} />
           </div>
         </div>
       </li>

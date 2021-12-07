@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { addProductToCart } from '../actions/cart';
+import { addProductToCart, removeProductFromCart } from '../actions/cart';
 
-class AddToCart extends Component {
+// ADD PRODUCT TO CART
+class AddProductToCart extends Component {
   onButtonClick = event => {
     event.target.innerHTML = 'Adding...';
     event.target.style.backgroundColor = 'var(--color-white-grey)';
@@ -31,4 +32,28 @@ class AddToCart extends Component {
   }
 }
 
-export default connect(null, { addProductToCart })(AddToCart);
+// REMOVE PRODUCT FROM CART
+class RemoveProductFromCart extends Component {
+  onButtonClick = event => {
+    event.target.innerHTML = 'Removing...';
+    setTimeout(() => {
+      // CALLING ACTION CREATOR TO REMOVE PRODUCT FROM CART
+      this.props.removeProductFromCart(this.props.productIndex);
+    }, 500);
+  };
+  render() {
+    return (
+      <button
+        onClick={e => this.onButtonClick(e)}
+        className='btn-text u-margin-left-small'
+      >
+        Remove
+      </button>
+    );
+  }
+}
+
+export const AddToCart = connect(null, { addProductToCart })(AddProductToCart);
+export const RemoveFromCart = connect(null, { removeProductFromCart })(
+  RemoveProductFromCart
+);

@@ -7,13 +7,13 @@
     padding: 0.8rem 1rem;
     transition: all 0.2s;
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
-
+    border-radius: 8px;
+    border: none;
     cursor: pointer;
   }
 
   &--yellow {
     background-color: var(--color-yellow-dark-2);
-    border: none;
   }
 
   &--rounded {
@@ -37,9 +37,13 @@
   &,
   &:link,
   &:visited {
+    padding: 0.5rem 1rem;
     font-size: 1.4rem;
     color: var(--color-blue);
     transition: all 0.2s;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   }
 
   &:hover {

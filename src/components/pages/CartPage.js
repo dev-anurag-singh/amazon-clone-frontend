@@ -5,7 +5,13 @@ import CartItem from '../CartItem';
 class CartPage extends Component {
   renderCartItems = () => {
     return this.props.products.map((product, i) => {
-      return <CartItem key={product._id + i} index={i} product={product} />;
+      return (
+        <CartItem
+          key={product._id + product.time}
+          index={i}
+          product={product}
+        />
+      );
     });
   };
 

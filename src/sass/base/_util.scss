@@ -3,6 +3,11 @@
   margin: auto;
 }
 
+.flex-al-center {
+  display: flex;
+  align-items: center;
+}
+
 // MARGINS
 .mr-auto {
   margin: auto;
@@ -20,6 +25,11 @@
 .margin-top-big {
   margin-top: 8rem;
 }
+.u-margin-left-small {
+  margin-left: 2rem;
+}
+
+// FONT WEIGHT
 .fw-600 {
   font-weight: 600;
 }

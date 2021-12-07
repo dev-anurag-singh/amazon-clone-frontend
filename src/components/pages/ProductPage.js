@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchProduct, clearProductState } from '../../actions/products';
 
 import Dropdown from '../Dropdown';
-import AddToCart from '../AddToCart';
+import { AddToCart } from '../CartButton';
 import ShopFeature from '../ShopFeature';
 import Ratings from '../util/Ratings';
 import ImageViewer from '../ImageViewer';
