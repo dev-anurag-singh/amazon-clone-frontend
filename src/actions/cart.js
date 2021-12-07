@@ -34,7 +34,6 @@ export const updateProductInCart = (index, quantity) => {
 };
 
 export const removeProductFromCart = index => {
-  console.log(index);
   let products = {};
   if (localStorage.getItem('cart')) {
     products = Object.assign({}, JSON.parse(localStorage.getItem('cart')));
