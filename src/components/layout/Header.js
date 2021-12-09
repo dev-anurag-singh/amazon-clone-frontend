@@ -61,14 +61,7 @@ const Header = props => {
 };
 
 const mapStateToProps = state => {
-  let productInCart = 0;
-  if (state.shoppingCart.length !== 0) {
-    state.shoppingCart.forEach(el => {
-      productInCart = productInCart + el.quantity;
-    });
-  }
-
-  return { productInCart };
+  return { productInCart: state.shoppingCart.cartQuantity };
 };
 
 export default connect(mapStateToProps)(Header);

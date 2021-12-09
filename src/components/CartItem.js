@@ -9,7 +9,7 @@ class CartItem extends Component {
   state = { quantity: this.props.product.quantity };
 
   onQuantityChange = q => {
-    this.props.updateProductInCart(this.props.index, q);
+    this.props.updateProductInCart(this.props.product.cartId, q);
     this.setState({ quantity: q });
   };
 
@@ -33,7 +33,7 @@ class CartItem extends Component {
               options={[1, 2, 3, 4, 5]}
               value={this.state.quantity}
             />
-            <RemoveFromCart productIndex={this.props.index} />
+            <RemoveFromCart productIndex={this.props.product.cartId} />
           </div>
         </div>
       </li>

@@ -29,6 +29,16 @@
   margin-left: 2rem;
 }
 
+// padding
+.u-padding-medium {
+  padding: 3rem;
+}
+
+//
+.text-center {
+  text-align: center;
+}
+
 // FONT WEIGHT
 .fw-600 {
   font-weight: 600;
@@ -50,7 +60,9 @@
 .bg-cl-white-grey {
   background-color: var(--color-white-grey);
 }
-
+.bg-white {
+  background-color: var(--color-white);
+}
 //BORDER
 .br-bottom-1px {
   border-bottom: 0.8px solid var(--color-grey-light-1);

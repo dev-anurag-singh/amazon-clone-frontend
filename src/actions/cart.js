@@ -1,50 +1,43 @@
 import _ from 'lodash';
 import { ADD_TO_CART, UPDATE_CART, REMOVE_FROM_CART } from './types';
 
-export const addProductToCart = (product, quantity) => {
-  let products = [];
-  if (localStorage.getItem('cart')) {
-    products = JSON.parse(localStorage.getItem('cart'));
-  }
-  let time = new Date().getTime();
+export const addProductToCart = (product, quantity) => (dispatch, getState) => {
+  let products = getState().shoppingCart.cartItems;
+  // CONVERTING PRODUCTS OBJECT INTO ARRAY
+  products = Object.values(products);
+  // ADDING UNIQUE IDENTIFIER
+  const cartId = product._id + new Date().getTime();
 
-  products.push({ ...product, quantity, time });
-
+  products.push({ ...product, quantity, cartId });
+  // SETTING PRODUCTS IN LOCAL STORAGE
   localStorage.setItem('cart', JSON.stringify(products));
-
-  return {
-    type: ADD_TO_CART,
-    payload: { ...product, quantity, time },
-  };
+  // DISPATCHING ACTION TO REDUCER
+  dispatch({ type: ADD_TO_CART, payload: { ...product, quantity, cartId } });
 };
 
-export const updateProductInCart = (index, quantity) => {
-  let products = [];
-  if (localStorage.getItem('cart')) {
-    products = JSON.parse(localStorage.getItem('cart'));
-  }
-  products[index].quantity = quantity;
+export const updateProductInCart =
+  (cartId, quantity) => (dispatch, getState) => {
+    let products = getState().shoppingCart.cartItems;
+    // CHANGING QUANTITY
+    products[cartId].quantity = quantity;
+    // UPDATING CART
+    localStorage.setItem('cart', JSON.stringify(Object.values(products)));
 
-  localStorage.setItem('cart', JSON.stringify(products));
-
-  return {
-    type: UPDATE_CART,
-    payload: [...products],
+    dispatch({
+      type: UPDATE_CART,
+      payload: products[cartId],
+    });
   };
-};
 
-export const removeProductFromCart = index => {
-  let products = {};
-  if (localStorage.getItem('cart')) {
-    products = Object.assign({}, JSON.parse(localStorage.getItem('cart')));
-  }
+export const removeProductFromCart = cartId => (dispatch, getState) => {
+  let products = getState().shoppingCart.cartItems;
 
-  products = Object.values(_.omit(products, index));
+  products = Object.values(_.omit(products, cartId));
 
   localStorage.setItem('cart', JSON.stringify(products));
 
-  return {
+  dispatch({
     type: REMOVE_FROM_CART,
-    payload: [...products],
-  };
+    payload: cartId,
+  });
 };

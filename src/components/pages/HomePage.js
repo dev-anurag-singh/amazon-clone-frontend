@@ -20,6 +20,8 @@ class HomePage extends Component {
     if (!this.props.valueForMoneyProducts.length) {
       this.props.fetchValueForMoneyProducts();
     }
+    // SCROLLING TO TOP
+    window.scroll(0, 0);
   }
 
   renderProductsFeed(data, title) {
